@@ -1,0 +1,32 @@
+{% extends "base.html" %} {% block content %}
+
+<h2>Plant disease detection</h2>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form id="upload-file" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label class="upload-label" for="imageUpload"><i class="fa fa-upload"></i> Choose image</label>
+                        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+                        <label class="upload-label" id="cameraButton"><i class="fa fa-camera"></i> <button type="button" id="btn-camera">Take a photo</button></label>
+                    </div>
+                </form>
+                <div class="image-section">
+                    <div class="img-preview" id="imagePreview">
+                        <img src="" alt="Image Preview" class="img-fluid">
+                    </div>
+                    <video id="videoPreview" autoplay></video>
+                    <button type="button" class="btn btn-primary" id="btn-snapshot">Take snapshot</button>
+                    <button type="button" class="btn btn-secondary" id="btn-upload">Upload snapshot</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="loader"></div>
+                <h2 id='result'></h2>
+                <button type="button" class="btn btn-primary btn-lg btn-block" id="btn-predict">Predict</button>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}
